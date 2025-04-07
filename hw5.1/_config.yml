@@ -1,0 +1,10 @@
+title: "HW5.1 Visualization"
+baseurl: "/hw5.1"
+url: "https://jimmy0303.github.io"
+theme: minima
+plugins:
+  - jekyll-relative-links
+
+exclude:
+  - vendor
+
