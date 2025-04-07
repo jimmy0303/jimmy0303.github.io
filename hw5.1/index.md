@@ -6,11 +6,16 @@ title: HW5.1
 ## Bigfoot Sightings Map
 <div id="choropleth"></div>
 <script>
-  // Load and render the choropleth map
   fetch("{{ '/hw5.1/assets/choropleth.json' | relative_url }}")
-    .then(response => response.json())
-    .then(spec => vegaEmbed('#choropleth', spec))
-    .catch(error => console.error("Error loading choropleth:", error));
+    .then(response => {
+      console.log("Choropleth response status:", response.status); // Debug line
+      return response.json();
+    })
+    .then(spec => {
+      console.log("Choropleth spec loaded:", spec); // Debug line
+      return vegaEmbed('#choropleth', spec);
+    })
+    .catch(error => console.error("Error:", error));
 </script>
 
 ## Interactive Line Chart
