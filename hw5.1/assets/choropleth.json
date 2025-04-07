@@ -8,13 +8,13 @@
     },
     "transform": [
       {
-        "lookup": "id",
+        "lookup": "id", 
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv",
+            "url": "https://raw.githubusercontent.com/jimmy0303/jimmy0303.github.io/main/hw5.1/assets/bfro_reports_processed.csv",
             "format": {"type": "csv"}
           },
-          "key": "state_code", 
+          "key": "state_id", 
           "fields": ["count"]
         }
       }
@@ -25,12 +25,12 @@
       "color": {
         "field": "count",
         "type": "quantitative",
-        "title": "Sightings",
+        "title": "Number of Sightings",
         "scale": {"scheme": "blues"}
       },
       "tooltip": [
         {"field": "properties.name", "type": "nominal", "title": "State"},
-        {"field": "count", "type": "quantitative", "title": "Reports"}
+        {"field": "count", "type": "quantitative", "title": "Sightings"}
       ]
     }
   }
