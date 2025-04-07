@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  jekyll:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,14 +16,12 @@ jobs:
           ruby-version: 3.1
           bundler-cache: true
 
-      - name: Install Dependencies
-        run: |
-          bundle config path vendor/bundle
-          bundle install
-
       - name: Build with Jekyll
-        uses: limjh16/jekyll-action-ts@v2
+        uses: helaili/jekyll-action@v2
         with:
-          jekyll_src: "./"
-          jekyll_env: production
-          enable_cache: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
