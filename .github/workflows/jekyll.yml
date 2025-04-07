@@ -1,11 +1,8 @@
 name: Build and deploy Jekyll site
 
-# Define the trigger events
 on:
   push:
-    branches: [main]  # Run on pushes to the "main" branch
-  pull_request:
-    branches: [main]  # Run on pull requests to "main"
+    branches: [main]
 
 jobs:
   jekyll:
@@ -19,17 +16,14 @@ jobs:
           ruby-version: 3.1
           bundler-cache: true
 
-      - name: Clean workspace
+      - name: Install Dependencies
         run: |
-          bundle config set --local path vendor/bundle
-          bundle clean
+          bundle config path vendor/bundle
+          bundle install
 
-      - name: Build and deploy
+      - name: Build with Jekyll
         uses: limjh16/jekyll-action-ts@v2
         with:
+          jekyll_src: "./"
+          jekyll_env: production
           enable_cache: true
-          pre_build_commands: |
-            bundle config set --local path vendor/bundle
-            bundle install --jobs 4 --retry 3
-          build_dir: "./"
-          keep_files: "assets, .git, .github, _config.yml, _site"
