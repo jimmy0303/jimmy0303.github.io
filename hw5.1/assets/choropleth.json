@@ -2,35 +2,47 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 400,
+    "title": "Bigfoot Sightings by U.S. State (2000-2022)",
     "data": {
       "url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json",
       "format": {"type": "topojson", "feature": "states"}
     },
     "transform": [
       {
-        "lookup": "id", 
+        "lookup": "id",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/jimmy0303/jimmy0303.github.io/main/hw5.1/assets/bfro_reports_processed.csv",
+            "url": "https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv",
             "format": {"type": "csv"}
           },
-          "key": "state_id", 
-          "fields": ["count"]
-        }
+          "key": "state",
+          "transform": [
+            {"filter": "datum.state !== null"},
+            {
+              "aggregate": [{"op": "count", "as": "sightings"}],
+              "groupby": ["state"]
+            },
+            {
+              "calculate": "indexof(['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'], datum.state) + 1",
+              "as": "id"
+            }
+          ]
+        },
+        "fields": ["sightings"]
       }
     ],
     "projection": {"type": "albersUsa"},
     "mark": "geoshape",
     "encoding": {
       "color": {
-        "field": "count",
+        "field": "sightings",
         "type": "quantitative",
-        "title": "Number of Sightings",
+        "title": "Number of Reports",
         "scale": {"scheme": "blues"}
       },
       "tooltip": [
-        {"field": "properties.name", "type": "nominal", "title": "State"},
-        {"field": "count", "type": "quantitative", "title": "Sightings"}
+        {"field": "properties.name", "title": "State", "type": "nominal"},
+        {"field": "sightings", "title": "Sightings", "type": "quantitative"}
       ]
-    }
-  }
+    },
+    "config": {"view": {"stroke": null}}}
