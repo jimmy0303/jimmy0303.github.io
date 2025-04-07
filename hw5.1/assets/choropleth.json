@@ -4,38 +4,33 @@
     "height": 400,
     "data": {
       "url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json",
-      "format": {
-        "type": "topojson",
-        "feature": "states"
-      }
+      "format": {"type": "topojson", "feature": "states"}
     },
-    "transform": [{
-      "lookup": "id",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv",
-          "format": {"type": "csv"}
-        },
-        "key": "state",
-        "fields": ["count"],
-        "as": ["count"]
+    "transform": [
+      {
+        "lookup": "id",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv",
+            "format": {"type": "csv"}
+          },
+          "key": "state_code", 
+          "fields": ["count"]
+        }
       }
-    }],
+    ],
     "projection": {"type": "albersUsa"},
     "mark": "geoshape",
     "encoding": {
       "color": {
         "field": "count",
         "type": "quantitative",
-        "title": "Number of Sightings",
+        "title": "Sightings",
         "scale": {"scheme": "blues"}
       },
       "tooltip": [
-        {"field": "state", "type": "nominal", "title": "State"},
-        {"field": "count", "type": "quantitative", "title": "Sightings"}
+        {"field": "properties.name", "type": "nominal", "title": "State"},
+        {"field": "count", "type": "quantitative", "title": "Reports"}
       ]
-    },
-    "config": {
-      "view": {"stroke": null}
     }
   }
