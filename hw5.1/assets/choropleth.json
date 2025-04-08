@@ -16,7 +16,7 @@
           "format": {"type": "csv"}
         },
         "key": "state_id",
-        "fields": ["count", "state"] 
+        "fields": ["count", "state"]
       }
     },
     {"filter": "datum.state !== null"} 
@@ -31,7 +31,7 @@
       "scale": {"scheme": "blues"}
     },
     "tooltip": [
-      {"field": "state", "type": "nominal", "title": "State"}, 
+      {"field": "state", "type": "nominal", "title": "State"},
       {"field": "count", "type": "quantitative", "title": "Reports"}
     ]
   }
