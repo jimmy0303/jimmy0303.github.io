@@ -1,32 +1,44 @@
 ---
-title: HW5.1 - Bigfoot Reports Analysis
+title: HW5.1 - UFO Sightings Analysis
 layout: post
 ---
 
-## Verified Bigfoot Sighting Dashboard
+## UFO Sighting Patterns Analysis
 
-[The Data](https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv) | 
+[The Data](https://github.com/UIUC-iSchool-DataViz/is445_data/raw/main/ufo-scrubbed-geocoded-time-standardized-00.csv) | 
 [The Analysis](https://github.com/yourusername/your-repo/blob/main/hw5.1_analysis.ipynb)
 
-<div id="dashboard"></div>
-<div id="error" style="color:red; margin:20px 0"></div>
+### Temporal Distribution
+<div id="vis1"></div>
+
+**Description**: Interactive line chart showing UFO sightings over time, filterable by country.
+
+**Design Choices**:
+- **Encodings**: Years (ordinal) on x-axis, Counts (quantitative) on y-axis
+- **Color**: Single color scheme with country filtering
+- **Interactivity**: Dropdown country selector
+
+**Transformations**:
+- Cleaned invalid dates (1950-2020 range)
+- Extracted year from datetime
+- Filtered missing geographic data
+
+### Geographic Distribution
+<div id="vis2"></div>
+
+**Description**: Heatmap showing global UFO sighting density.
+
+**Design Choices**:
+- **Encodings**: Latitude/longitude positions with color intensity
+- **Projection**: Equirectangular for global view
+- **Color Scheme**: Viridis for better value differentiation
 
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
 <script>
-vegaEmbed('#dashboard', 'bfro_dashboard.json')
-  .catch(error => {
-    document.getElementById('error').innerHTML = `
-      <h3>Error Loading Visualization</h3>
-      <p>${error.message}</p>
-      <p>Verify:</p>
-      <ul>
-        <li>JSON file exists at: bfro_dashboard.json</li>
-        <li>Data range: 1960-2022</li>
-        <li>State names match US map data</li>
-      </ul>
-    `;
-  });
+// Embed visualizations
+vegaEmbed('#vis1', 'ufo_time.json');
+vegaEmbed('#vis2', 'ufo_geo.json');
 </script>
