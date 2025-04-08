@@ -9,11 +9,11 @@ title: HW5.1
 <script>
   fetch("{{ '/hw5.1/assets/choropleth.json' | relative_url }}")
     .then(response => {
-      console.log("Choropleth response status:", response.status); 
+      console.log("Choropleth response status:", response.status);
       return response.json();
     })
     .then(spec => {
-      console.log("Choropleth spec loaded:", spec);
+      console.log("Choropleth spec loaded:", spec); 
       return vegaEmbed('#choropleth', spec);
     })
     .catch(error => console.error("Error:", error));
