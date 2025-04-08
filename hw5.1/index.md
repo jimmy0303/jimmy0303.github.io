@@ -3,13 +3,12 @@ layout: default
 title: HW5.1
 ---
 
-## Visualization 1: Bigfoot Sightings Choropleth Map
-
+## Bigfoot Sightings Map
 <div id="choropleth"></div>
 <script>
   fetch("{{ '/hw5.1/assets/choropleth.json' | relative_url }}")
     .then(response => {
-      console.log("Choropleth response status:", response.status);
+      console.log("Choropleth response status:", response.status); 
       return response.json();
     })
     .then(spec => {
@@ -19,10 +18,8 @@ title: HW5.1
     .catch(error => console.error("Error:", error));
 </script>
 
----
 
-## Visualization 2: UFO Sightings Interactive Map
-
+## Interactive Line Chart
 <div id="line-chart"></div>
 <script>
   fetch("{{ '/hw5.1/assets/line_chart.json' | relative_url }}")
@@ -30,4 +27,3 @@ title: HW5.1
     .then(spec => vegaEmbed('#line-chart', spec))
     .catch(error => console.error("Error loading line chart:", error));
 </script>
-
