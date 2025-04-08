@@ -1,44 +1,59 @@
 ---
-title: HW5.1 - UFO Sightings Analysis
-layout: post
+title: Bigfoot Sightings Visualization
 ---
 
-## UFO Sighting Patterns Analysis
+## Visualizing Bigfoot Sightings Across the United States
 
-[The Data](https://github.com/UIUC-iSchool-DataViz/is445_data/raw/main/ufo-scrubbed-geocoded-time-standardized-00.csv) | 
-[The Analysis](https://github.com/yourusername/your-repo/blob/main/hw5.1_analysis.ipynb)
+This project explores Bigfoot sightings data from the BFRO reports dataset, showing both geographic distribution and temporal trends.
 
-### Temporal Distribution
-<div id="vis1"></div>
+### The Visualizations
 
-**Description**: Interactive line chart showing UFO sightings over time, filterable by country.
+<div class="grid">
+    <div class="cell">
+        <vegachart schema-url="/hw5.1/choropleth.json"></vegachart>
+    </div>
+    <div class="cell">
+        <vegachart schema-url="/hw5.1/line_chart.json"></vegachart>
+    </div>
+</div>
 
-**Design Choices**:
-- **Encodings**: Years (ordinal) on x-axis, Counts (quantitative) on y-axis
-- **Color**: Single color scheme with country filtering
-- **Interactivity**: Dropdown country selector
+### Visualization 1: Choropleth Map
 
-**Transformations**:
-- Cleaned invalid dates (1950-2020 range)
-- Extracted year from datetime
-- Filtered missing geographic data
+**What's visualized**: This map shows the total number of Bigfoot reports per state from 2000-2022. 
 
-### Geographic Distribution
-<div id="vis2"></div>
+**Design choices**: 
+- Geographic encoding using state boundaries
+- Quantitative color encoding (blue scale) for report counts
+- Tooltip interaction showing state names and exact counts
 
-**Description**: Heatmap showing global UFO sighting density.
+**Data transformations**:
+- Grouped raw data by state
+- Mapped state names to FIPS codes for geographic joining
+- Filtered to include only 2000-2022 data
 
-**Design Choices**:
-- **Encodings**: Latitude/longitude positions with color intensity
-- **Projection**: Equirectangular for global view
-- **Color Scheme**: Viridis for better value differentiation
+**Color scheme**: Blue sequential scale was chosen to represent increasing report counts intuitively.
 
-<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+### Visualization 2: Temporal Line Chart
 
-<script>
-// Embed visualizations
-vegaEmbed('#vis1', 'ufo_time.json');
-vegaEmbed('#vis2', 'ufo_geo.json');
-</script>
+**What's visualized**: This interactive chart shows yearly report counts for selected states.
+
+**Design choices**: 
+- Line encoding for temporal trends
+- Ordinal x-axis for years
+- Quantitative y-axis for counts
+- State selection dropdown
+
+**Data transformations**:
+- Extracted year from date strings
+- Grouped counts by state and year
+- Filtered out invalid dates
+
+**Interactivity**: 
+- Dropdown selector allows users to choose different states
+- Enables comparison of temporal patterns between regions
+- Helps identify outlier years for specific states
+
+### Data Sources and Analysis
+
+<a class="button" href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv" target="_blank">The Data</a>
+<a class="button" href="https://github.com/yourusername/yourrepo/blob/main/hw5.1_analysis.ipynb" target="_blank">The Analysis</a>
