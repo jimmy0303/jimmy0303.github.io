@@ -13,7 +13,7 @@ title: HW5.1
       return response.json();
     })
     .then(spec => {
-      console.log("Choropleth spec loaded:", spec); 
+      console.log("Choropleth spec loaded:", spec);
       return vegaEmbed('#choropleth', spec);
     })
     .catch(error => console.error("Error:", error));
