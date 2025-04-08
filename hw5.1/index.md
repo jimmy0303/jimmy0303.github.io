@@ -35,39 +35,46 @@ This project explores Bigfoot sightings data from the BFRO reports dataset, show
 
 ### Visualization 1: Choropleth Map
 
-**What's visualized**: This map shows the total number of Bigfoot reports per state from 2000-2022. 
+**What's visualized:**  
+This map displays the total number of Bigfoot reports per state from 2000–2022.
 
-**Design choices**: 
-- Geographic encoding using state boundaries
-- Quantitative color encoding (blue scale) for report counts
-- Tooltip interaction showing state names and exact counts
+**Design choices – Encodings:**  
+- **Geographic encoding:** State boundaries represent spatial locations.
+- **Quantitative encoding:** Report counts are represented using a blue sequential color scale.
+- **Tooltip:** Hover interactions reveal the state name and the exact number of reports.
 
-**Data transformations**:
-- Grouped raw data by state
-- Mapped state names to FIPS codes for geographic joining
-- Filtered to include only 2000-2022 data
+**Design choices – Colormaps:**  
+A blue sequential colormap was chosen because its darker shades intuitively indicate higher counts, making patterns of intensity easy to spot.
 
-**Color scheme**: Blue sequential scale was chosen to represent increasing report counts intuitively.
+**Data Transformations:**  
+- The raw data is grouped by state to compute total report counts.
+- State names are mapped to FIPS codes for accurate geographic joining.
+- The data is filtered to include only records from 2000 until 2022.
+
+---
 
 ### Visualization 2: Temporal Line Chart
 
-**What's visualized**: This interactive chart shows yearly report counts for selected states.
+**What's visualized:**  
+This interactive line chart shows the annual count of Bigfoot sightings for a selected state. Users can choose a state from a dropdown, which dynamically updates the chart.
 
-**Design choices**: 
-- Line encoding for temporal trends
-- Ordinal x-axis for years
-- Quantitative y-axis for counts
-- State selection dropdown
+**Design choices – Encodings:**  
+- **Temporal encoding:** The x-axis (years) is treated as an ordinal sequence.
+- **Quantitative encoding:** The y-axis shows the number of reports.
+- **Interactive filtering:** A dropdown menu lets users select the state of interest.
 
-**Data transformations**:
-- Extracted year from date strings
-- Grouped counts by state and year
-- Filtered out invalid dates
+**Design choices – Colormaps:**  
+A single color (steel blue) is used for the line to maintain visual clarity and focus, avoiding distraction with multiple colors.
 
-**Interactivity**: 
-- Dropdown selector allows users to choose different states
-- Enables comparison of temporal patterns between regions
-- Helps identify outlier years for specific states
+**Data Transformations:**  
+- The date strings are converted into year values.
+- Data is aggregated by state and year to compute annual counts.
+- Invalid date entries are filtered out to ensure a clean time series.
+
+**Interactivity:**  
+The chart employs a parameter-driven dropdown that updates the displayed state. This interactivity allows for easy comparisons of temporal patterns and helps highlight outlier years.
+
+---
 
 ### Data Sources and Analysis
 
