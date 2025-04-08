@@ -5,7 +5,6 @@ title: HW5.1
 
 ## Visualization 1: Bigfoot Sightings Choropleth Map
 
-```vega-lite
 {% include_relative assets/choropleth.json %}
 
 **Description**:  
