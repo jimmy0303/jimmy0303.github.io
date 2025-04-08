@@ -72,4 +72,4 @@ This project explores Bigfoot sightings data from the BFRO reports dataset, show
 ### Data Sources and Analysis
 
 <a class="button" href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv" target="_blank">The Data</a>
-<a class="button" href="https://github.com/yourusername/yourrepo/blob/main/hw5.1_analysis.ipynb" target="_blank">The Analysis</a>
+<a class="button" href="https://github.com/jimmy0303/jimmy0303.github.io/blob/main/hw5.1/hw5.1_analysis.ipynb" target="_blank">The Analysis</a>
