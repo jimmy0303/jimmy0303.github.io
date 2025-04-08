@@ -1,7 +1,14 @@
+--- 
+name: Bigfoot Sightings Visualization
+tools: [HTML, Vega, Vega-Lite]
+image: assets/pngs/bigfoot.png
+description: This project visualizes Bigfoot sightings data across the United States using interactive Vega-Lite charts.
+custom_js:
+  - vega.min
+  - vega-lite.min
+  - vega-embed.min
+  - justcharts
 ---
-title: Bigfoot Sightings Visualization
----
-
 
 <!-- Load Vega libraries required for vegachart rendering -->
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
