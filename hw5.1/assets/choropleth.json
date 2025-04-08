@@ -2,29 +2,37 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 800,
   "height": 400,
+  "title": "Bigfoot Sightings by State",
   "data": {
     "url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json",
     "format": {"type": "topojson", "feature": "states"}
   },
-  "transform": [{
-    "lookup": "id",
-    "from": {
-      "data": {"url": "bfro_reports_processed.csv"},
-      "key": "state_id",
-      "fields": ["count"]
-    }
-  }],
+  "transform": [
+    {
+      "lookup": "id",
+      "from": {
+        "data": {
+          "url": "bfro_reports_processed.csv",
+          "format": {"type": "csv"}
+        },
+        "key": "state_id",
+        "fields": ["count", "state"]
+      }
+    },
+    {"filter": "datum.state !== null"}
+  ],
   "projection": {"type": "albersUsa"},
   "mark": "geoshape",
   "encoding": {
     "color": {
       "field": "count",
       "type": "quantitative",
+      "title": "Sightings",
       "scale": {"scheme": "blues"}
     },
     "tooltip": [
-      {"field": "properties.name", "title": "State"},
-      {"field": "count", "title": "Sightings"}
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "count", "type": "quantitative", "title": "Reports"}
     ]
   }
 }
