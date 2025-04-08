@@ -11,7 +11,7 @@
       "from": {
         "data": {"url": "bfro_reports_processed.csv"},
         "key": "state_id",
-        "fields": ["count"]
+        "fields": ["count", "state"]  
       }
     }],
     "projection": {"type": "albersUsa"},
@@ -23,8 +23,8 @@
         "scale": {"scheme": "blues"}
       },
       "tooltip": [
-        {"field": "properties.name", "title": "State"},
-        {"field": "count", "title": "Sightings"}
+        {"field": "state", "title": "State", "type": "nominal"},  
+        {"field": "count", "title": "Sightings", "type": "quantitative"}
       ]
     }
   }
