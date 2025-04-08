@@ -18,6 +18,7 @@ title: HW5.1
     .catch(error => console.error("Error:", error));
 </script>
 
+---
 
 ## Interactive Line Chart
 <div id="line-chart"></div>
