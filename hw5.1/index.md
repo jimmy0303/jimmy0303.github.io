@@ -33,6 +33,8 @@ This project explores Bigfoot sightings data from the BFRO reports dataset, show
     </div>
 </div>
 
+---
+
 ### Visualization 1: Choropleth Map
 
 **What's visualized:**  
