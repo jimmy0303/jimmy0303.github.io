@@ -5,6 +5,11 @@ title: HW5.1
 
 ## Visualization 1: Bigfoot Sightings Choropleth Map
 
+fetch("{{ '/hw5.1/assets/choropleth.json' | relative_url }}")
+    .then(response => response.json())
+    .then(spec => vegaEmbed('#choropleth', spec))
+    .catch(error => console.error("Error loading choropleth:", error));
+
 **Description**:  
 This choropleth map visualizes the number of Bigfoot sightings reported per U.S. state from 2000 to 2022. Darker shades indicate higher reported sightings.
 
