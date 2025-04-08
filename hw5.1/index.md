@@ -19,6 +19,7 @@ title: HW5.1
     .catch(error => console.error("Error:", error));
 </script>
 
+---
 
 ## Visualization 2: UFO Sightings Interactive Map
 
