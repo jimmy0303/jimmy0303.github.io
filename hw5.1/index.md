@@ -5,6 +5,7 @@ title: HW5.1
 
 ## Visualization 1: Bigfoot Sightings Choropleth Map
 
+```vega-lite
 {% include_relative assets/choropleth.json %}
 
 **Description**:  
@@ -27,7 +28,7 @@ This choropleth map visualizes the number of Bigfoot sightings reported per U.S.
 
 ## Visualization 2: UFO Sightings Interactive Map
 
-{% include_relative assets/line_chart.json %}
+{% include_relative assets/ufo_map.json %}
 
 **Description**:  
 This interactive map shows UFO sighting locations across the U.S., colored by UFO shape. Users can filter by shape and time period.
