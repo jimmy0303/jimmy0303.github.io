@@ -2,6 +2,11 @@
 title: Bigfoot Sightings Visualization
 ---
 
+<!-- Load Vega libraries required for vegachart rendering -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
 ## Visualizing Bigfoot Sightings Across the United States
 
 This project explores Bigfoot sightings data from the BFRO reports dataset, showing both geographic distribution and temporal trends.
