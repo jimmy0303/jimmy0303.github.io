@@ -39,10 +39,10 @@ This project explores Bigfoot sightings data from the BFRO reports dataset, show
 
 <div class="grid">
     <div class="cell">
-        <vegachart schema-url="/hw5.1/choropleth.json"></vegachart>
+        <vegachart schema-url="/_projects/choropleth.json"></vegachart>
     </div>
     <div class="cell">
-        <vegachart schema-url="/hw5.1/line_chart.json"></vegachart>
+        <vegachart schema-url="/_projects/line_chart.json"></vegachart>
     </div>
 </div>
 
@@ -110,5 +110,5 @@ The chart employs a parameter-driven dropdown that updates the displayed state. 
 
 
 <a class="button" href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv" target="_blank">The Data</a>
-<a class="button" href="https://github.com/jimmy0303/jimmy0303.github.io/blob/main/hw5.1/hw5.1_analysis.ipynb" target="_blank">The Analysis</a>
+<a class="button" href="https://github.com/jimmy0303/jimmy0303.github.io/blob/main/_projects/hw5.1_analysis.ipynb" target="_blank">The Analysis</a>
 
