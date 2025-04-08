@@ -1,28 +1,32 @@
 ---
-title: HW5.1 - UFO Sightings Visualization
+title: HW5.1 - Business Licenses Analysis
 layout: post
 ---
 
-## UFO Sightings Analysis
+## Business License Visualizations
 
-[The Data](https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/bfro_reports_fall2022.csv) | 
+[The Data](https://github.com/UIUC-iSchool-DataViz/is445_data/raw/main/licenses_fall2022.csv) | 
 [The Analysis](https://github.com/yourusername/your-repo/blob/main/hw5.1_analysis.ipynb)
 
-### Line Chart: UFO Sightings Over Time by State
-<div id="linechart"></div>
+### License Type Distribution
+<div id="types"></div>
 
-### Choropleth Map: Total Sightings by State
-<div id="choropleth"></div>
+**Description**: Bar chart showing frequency of different license types.
+
+**Design Choices**:
+- **Encodings**: License types on x-axis, counts on y-axis
+- **Color**: Uniform steelblue for clarity
+- **Interactivity**: Built-in pan/zoom
+
+**Transformations**:
+- Aggregated counts per license type
+- Sorted by frequency
 
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
 <script>
-// Embed visualizations
-vegaEmbed('#linechart', 'line_chart.json')
-  .catch(error => console.error(error));
-  
-vegaEmbed('#choropleth', 'choropleth.json')
+vegaEmbed('#types', 'license_types.json')
   .catch(error => console.error(error));
 </script>
