@@ -5,6 +5,8 @@ title: HW5.1
 
 ## Visualization 1: Bigfoot Sightings Choropleth Map
 
+{% include_relative assets/choropleth.json %}
+
 **Description**:  
 This choropleth map visualizes the number of Bigfoot sightings reported per U.S. state from 2000 to 2022. Darker shades indicate higher reported sightings.
 
@@ -24,6 +26,8 @@ This choropleth map visualizes the number of Bigfoot sightings reported per U.S.
 ---
 
 ## Visualization 2: UFO Sightings Interactive Map
+
+{% include_relative assets/line_chart.json %}
 
 **Description**:  
 This interactive map shows UFO sighting locations across the U.S., colored by UFO shape. Users can filter by shape and time period.
