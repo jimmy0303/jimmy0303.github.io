@@ -27,3 +27,7 @@ title: HW5.1
     .then(spec => vegaEmbed('#line-chart', spec))
     .catch(error => console.error("Error loading line chart:", error));
 </script>
+
+
+```vega-lite
+{% include_relative assets/choropleth.json %}
