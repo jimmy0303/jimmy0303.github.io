@@ -39,10 +39,10 @@ This project explores Bigfoot sightings data from the BFRO reports dataset, show
 
 <div class="grid">
     <div class="cell">
-        <vegachart schema-url="/hw5.1/assets/choropleth.json"></vegachart>
+        <vegachart schema-url="/assets/json/choropleth.json"></vegachart>
     </div>
     <div class="cell">
-        <vegachart schema-url="/hw5.1/assets/line_chart.json"></vegachart>
+        <vegachart schema-url="/assets/json/line_chart.json"></vegachart>
     </div>
 </div>
 
